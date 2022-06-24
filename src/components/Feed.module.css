@@ -1,0 +1,4 @@
+.feed {
+  width: var(--feed-width);
+  border-right: solid 1px var(--border);
+}

@@ -1,0 +1,15 @@
+.button {
+  border: none;
+  outline: none;
+  background: var(--background-btn);
+  color: var(--text-btn);
+  padding: 6px 15px;
+  border-radius: var(--max-radius);
+  font-weight: 700;
+}
+.primary {
+  background: var(--primary);
+}
+.primary:hover {
+  background: var(--primary-hvr);
+}

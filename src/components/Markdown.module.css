@@ -1,0 +1,6 @@
+.markdown div p > * {
+  margin-block: 5px;
+}
+.markdown p {
+  color: var(--text);
+}

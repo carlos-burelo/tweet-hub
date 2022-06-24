@@ -1,5 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "#mocks/*": ["./shared/mocks/*"],
+      "#libs/*": ["./shared/libs/*"],
+      "#components/*": ["./components/*"],
+      "#hooks/*": ["./hooks/*"],
+      "#types": ["./shared/types/index"]
+    },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

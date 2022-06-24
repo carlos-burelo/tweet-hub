@@ -1,0 +1,29 @@
+.tweetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tweetData {
+  display: flex;
+  gap: 10px;
+}
+.tweetAuthorName {
+  margin-right: 5px;
+}
+
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: var(--max-radius);
+}
+
+.tweetDate {
+  color: var(--subtext);
+}
+.more:hover {
+  background-color: var(--primary-transluced);
+  color: var(--primary);
+}

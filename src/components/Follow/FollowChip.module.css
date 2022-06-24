@@ -1,0 +1,16 @@
+.followChip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.followChip:hover {
+  background-color: var(--chip-hvr);
+}
+.user {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}

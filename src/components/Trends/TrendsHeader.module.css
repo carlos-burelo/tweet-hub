@@ -1,0 +1,19 @@
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  overflow-x: scroll;
+}
+.categories::-webkit-scrollbar {
+  display: none;
+}
+.category {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.category:hover {
+  background-color: var(--nav-link-hvr);
+}
