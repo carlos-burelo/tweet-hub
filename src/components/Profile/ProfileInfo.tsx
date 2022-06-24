@@ -29,7 +29,12 @@ export default function ProfileInfo() {
         </div>
         <p className={_.bio}>{userMock.bio}</p>
         <div className={_.otherInfo}>
-          <a className={_.website} href={userMock.website} target='_blank'>
+          <a
+            className={_.website}
+            href={userMock.website}
+            target='_blank'
+            rel='noreferrer noopener'
+          >
             <WebsiteIcon />
             <span>{userMock.website.replace(/https:\/\//, '')}</span>
           </a>
