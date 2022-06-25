@@ -9,6 +9,7 @@
   bottom: 0;
   padding: 20px 0;
   border-right: solid 1px var(--border);
+  z-index: var(--z-nav);
 }
 .brand mark {
   padding-inline: 1px;

@@ -91,6 +91,9 @@ mark {
   --layout-margin: 60px;
   /* ANIMATIONS */
   --t-duration: 0.15s;
+  --z-nav: 1000;
+  --z-modal: 2000;
+  --z-card: 1500;
 }
 @media (max-width: 1200px) {
   :root {
