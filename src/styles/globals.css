@@ -54,7 +54,7 @@ img {
   border: solid 1px var(--border);
   max-width: 100%;
   width: 100%;
-  z-index: -1;
+  /* z-index: -1; */
 }
 mark {
   background-color: var(--primary);

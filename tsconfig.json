@@ -5,6 +5,7 @@
       "#mocks/*": ["./shared/mocks/*"],
       "#libs/*": ["./shared/libs/*"],
       "#components/*": ["./components/*"],
+      "#graphql/*": ["./graphql/*"],
       "#hooks/*": ["./hooks/*"],
       "#types": ["./shared/types/index"]
     },

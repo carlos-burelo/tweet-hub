@@ -1,18 +1,11 @@
+import { resolvers, typeDefs } from '#graphql/server'
 import { createServer } from '@graphql-yoga/node'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 const server = createServer({
   schema: {
-    typeDefs: `
-      type Query {
-        hello: String
-      }
-    `,
-    resolvers: {
-      Query: {
-        hello: () => 'Hello world!'
-      }
-    }
+    typeDefs,
+    resolvers
   },
 
   graphiql: {
