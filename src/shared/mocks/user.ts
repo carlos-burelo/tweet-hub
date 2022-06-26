@@ -1,3 +1,44 @@
+import { User } from "#types"
+
+export const users: User[] = [
+  {
+    id: 'user-1',
+    avatar: '/profile.png',
+    bio: 'I am a user',
+    createdAt: '2020-01-01',
+    displayName: 'User One',
+    userName: 'user1',
+    website: 'https://user1.com',
+    followers: [],
+    following: [],
+  },
+  {
+    id: 'user-2',
+    avatar: 'https://avatars.githubusercontent.com/u/22801514?v=4',
+    bio: 'I am a user',
+    createdAt: '2020-01-01',
+    displayName: 'User Two',
+    userName: 'user2',
+    website: 'https://user1.com',
+    followers: [],
+    following: [],
+  },
+  {
+    id: 'user-3',
+    avatar: 'https://avatars.githubusercontent.com/u/45366419?v=4',
+    bio: 'I am a user',
+    createdAt: '2020-01-01',
+    displayName: 'User Three',
+    userName: 'user3',
+    website: 'https://user1.com',
+    followers: [],
+    following: [],
+  }
+]
+
+
+
+
 export const userMock = {
   id: 'carlos31',
   name: 'Carlos Burelo',
