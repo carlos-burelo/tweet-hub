@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    ".prettierrc": true,
+    "yarn.lock": true,
+    "next-env.d.ts": true,
+    "README.md": true,
+    ".eslintrc.json": true,
+    ".gitignore": true,
+    ".vercel": true,
+    ".next": true
+  }
+}
