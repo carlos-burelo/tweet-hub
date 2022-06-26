@@ -1,3 +1,5 @@
+import { followUsersQuery } from '#graphql/client/queys'
+import useGql from '#hooks/useGql'
 import FollowChip from './Follow/FollowChip'
 import Search from './Search'
 import _ from './Sidebar.module.css'
@@ -13,6 +15,7 @@ export default function Sidebar({
   showFollow,
   showTrends,
 }: SidebarProps) {
+  const { loading, data } = useGql(followUsersQuery)
   return (
     <div className={_.container}>
       {showSearch && (
@@ -29,9 +32,16 @@ export default function Sidebar({
 
         {showFollow && (
           <AsideCard title='A quién seguir?'>
+            {loading ? (
+              <p>Loading...</p>
+            ) : (
+              data.users.map((user: any) => (
+                <FollowChip key={user.id} {...user} />
+              ))
+            )}
+            {/* <FollowChip />
             <FollowChip />
-            <FollowChip />
-            <FollowChip />
+            <FollowChip /> */}
           </AsideCard>
         )}
       </aside>

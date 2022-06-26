@@ -12,6 +12,8 @@ export default function Avatar({ src, size = 48, className }: Props) {
       src={src}
       width={size}
       height={size}
+      priority={true}
+      loading='eager'
       className={_.avatar + ' ' + className}
       alt='avatar'
     />

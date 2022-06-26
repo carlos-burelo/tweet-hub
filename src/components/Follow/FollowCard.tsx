@@ -1,13 +1,22 @@
 import Avatar from '#components/Avatar'
 import Button from '#components/Button'
-import { userMock } from '#mocks/user'
+import { User } from '#types'
+// import { userMock } from '#mocks/user'
 import _ from './FollowCard.module.css'
 
-interface Props {
+interface Props
+  extends Pick<User, 'avatar' | 'bio' | 'displayName' | 'userName'> {
   top: boolean
   onHide: (value: boolean) => void
 }
-export default function FollowCard({ top, onHide }: Props) {
+export default function FollowCard({
+  top,
+  onHide,
+  avatar,
+  bio,
+  displayName,
+  userName,
+}: Props) {
   return (
     <div
       className={_.followCard}
@@ -19,7 +28,7 @@ export default function FollowCard({ top, onHide }: Props) {
     >
       <div className={_.header}>
         <div className={_.avatar}>
-          <Avatar src={userMock.avatar} size={80} />
+          <Avatar src={avatar} size={80} />
         </div>
         <div className={_.btn}>
           <Button text='Seguir' />
@@ -27,10 +36,10 @@ export default function FollowCard({ top, onHide }: Props) {
       </div>
       <div className={_.body}>
         <div className={_.displayNames}>
-          <h2 className={_.name}>{userMock.name}</h2>
-          <p className={_.usernname}></p>
+          <h2 className={_.name}>{displayName}</h2>
+          <p className={_.usernname}>{userName}</p>
         </div>
-        <p className={_.bio}>{userMock.bio}</p>
+        <p className={_.bio}>{bio}</p>
         <div className={_.otherInfo}>
           <div className={_.following}>
             <span className={_.followCount}>10</span>

@@ -4,8 +4,12 @@ import Avatar from '#components/Avatar'
 import { userMock } from '#mocks/user'
 import { CalendarIcon, WebsiteIcon } from 'shared/icons'
 import TweetCard from '#components/Tweet/TweetCard'
+import useGql from '#hooks/useGql'
+import { feedQuery, userFeedQuery } from '#graphql/client/queys'
 export default function ProfileInfo() {
   const categories = ['Tweets', 'Respuestas', 'Fotos y videos', 'Me gusta']
+  const { data, loading } = useGql(userFeedQuery, { authorId: 'user-1' })
+  console.log(loading)
   return (
     <div className={_.container}>
       <div className={_.images}>
@@ -35,11 +39,16 @@ export default function ProfileInfo() {
             target='_blank'
             rel='noreferrer noopener'
           >
-            <WebsiteIcon />
+            <div className={_.icon}>
+              <WebsiteIcon />
+            </div>
             <span>{userMock.website.replace(/https:\/\//, '')}</span>
           </a>
           <div className={_.joinDate}>
-            <CalendarIcon /> Se unió en enero de 2019
+            <div className={_.icon}>
+              <CalendarIcon />
+            </div>
+            <span>Se unió en enero de 2019</span>
           </div>
         </div>
       </div>
@@ -52,10 +61,13 @@ export default function ProfileInfo() {
           ))}
         </div>
         <div className={_.tweets}>
-          <TweetCard />
-          <TweetCard />
-          <TweetCard />
-          <TweetCard />
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            data.tweetList.map((tweet: any) => (
+              <TweetCard key={tweet.id} {...tweet} />
+            ))
+          )}
         </div>
       </div>
     </div>
