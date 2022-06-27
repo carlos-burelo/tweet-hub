@@ -2,7 +2,7 @@ import Feed from '#components/Feed'
 import Layout from '#components/Layout'
 import Sidebar from '#components/Sidebar'
 import TweetCard from '#components/Tweet/TweetCard'
-import query from '#graphql/client'
+import query from '#graphql'
 import { Tweet } from '#types'
 import type { NextPage } from 'next'
 

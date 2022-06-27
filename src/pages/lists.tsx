@@ -1,5 +1,5 @@
 import Layout from '#components/Layout'
-import ListsContainer from '#components/Lists/ListsContainer'
+import ListsContainer from '#components/Lists/ListContainer'
 import Sidebar from '#components/Sidebar'
 import type { NextPage } from 'next'
 

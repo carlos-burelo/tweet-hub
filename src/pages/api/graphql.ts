@@ -1,4 +1,4 @@
-import { resolvers, typeDefs } from '#graphql/server'
+import { resolvers, typeDefs } from '#server/graphql'
 import { createServer } from '@graphql-yoga/node'
 import { NextApiRequest, NextApiResponse } from 'next'
 

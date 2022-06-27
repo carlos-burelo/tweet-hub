@@ -1,15 +1,31 @@
 import Layout from '#components/Layout'
 import ProfileContainer from '#components/Profile/ProfileContainer'
 import Sidebar from '#components/Sidebar'
-import type { NextPage } from 'next'
+import useGql, { userQuery } from '#graphql'
+import { User } from '#shared/types'
+import type { GetServerSideProps, NextPage } from 'next'
 
-const Lists: NextPage = () => {
+interface Props {
+  user: User
+}
+
+const Lists: NextPage<Props> = ({ user }) => {
   return (
     <Layout>
       <ProfileContainer />
       <Sidebar showFollow showSearch showTrends />
     </Layout>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const { profile } = params as { profile: string }
+  const { user } = await useGql<User>(userQuery, { userName: profile })
+  return {
+    props: {
+      user,
+    },
+  }
 }
 
 export default Lists

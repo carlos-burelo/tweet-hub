@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function useGql(query: string, variables?: any) {
+export default function useQuery(query: string, variables?: any) {
   let userQuery = `
     query {
       ${query}
