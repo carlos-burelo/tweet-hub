@@ -1,7 +1,0 @@
-.avatar {
-  border-radius: var(--max-radius);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
-}

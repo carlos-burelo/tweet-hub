@@ -1,0 +1,16 @@
+@import 'utils';
+
+.listCard {
+  width: 100px;
+  height: 110px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  flex-direction: column;
+  cursor: pointer;
+  @include center;
+}
+
+.listCard:hover {
+  background-color: var(--background-card-hvr);
+}
