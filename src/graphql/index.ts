@@ -1,12 +1,11 @@
 import { host } from "shared/env"
 
-export default async function query(query: string, variables?: any) {
+export default async function useGql<T = any>(query: string, variables?: any): Promise<{ [k: string]: T }> {
   let userQuery = `
     query {
       ${query}
     }
   `
-
   if (variables) {
     for (const key in variables) userQuery = userQuery.replaceAll(`$${key}`, `"${variables[key]}"`)
   }
@@ -18,3 +17,4 @@ export default async function query(query: string, variables?: any) {
   const response = await fetcher(userQuery, variables)
   return response.data || null
 }
+export * from './queys'
