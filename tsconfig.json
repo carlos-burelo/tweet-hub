@@ -3,9 +3,11 @@
     "baseUrl": "./src",
     "paths": {
       "#mocks/*": ["./shared/mocks/*"],
+      "#shared/*": ["./shared/*"],
+      "#server/*": ["../server/*"],
       "#libs/*": ["./shared/libs/*"],
       "#components/*": ["./components/*"],
-      "#graphql/*": ["./graphql/*"],
+      "#graphql": ["./graphql/index"],
       "#hooks/*": ["./hooks/*"],
       "#types": ["./shared/types/index"]
     },
