@@ -39,14 +39,16 @@ export const users: User[] = [
 
 
 
-export const userMock = {
-  id: 'carlos31',
-  name: 'Carlos Burelo',
-  email: 'jhonDoe@gmail.com',
-  avatar: 'https://pbs.twimg.com/profile_images/1516438716528607235/gvPOb6Ds_400x400.png',
-  website: 'https://carlosburelo.vercel.app',
-  bio: 'Front-end / Back-end  Developer-  Software Engineer',
-  // avatar: 'https://avatars.githubusercontent.com/u/56522783?v=4',
+export const userMock: User = {
+  avatar: '/profile.png',
+  displayName: 'User One',
+  userName: 'user1',
+  website: 'https://user1.com',
+  id: 'user-1',
+  bio: 'I am a user',
+  createdAt: '2020-01-01',
+  followers: [],
+  following: [],
 }
 
 export const tweetMock = {
