@@ -1,6 +1,6 @@
 import { host } from "shared/env"
 
-export default async function useGql<T = any>(query: string, variables?: any): Promise<{ [k: string]: T }> {
+export default async function gql<T = any>(query: string, variables?: any): Promise<{ [k: string]: T }> {
   let userQuery = `
     query {
       ${query}
