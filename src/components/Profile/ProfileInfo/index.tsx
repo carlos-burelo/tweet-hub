@@ -19,6 +19,7 @@ export default function ProfileInfo() {
             src='https://pbs.twimg.com/profile_banners/1087496012573208576/1650382139/1500x500'
             height={200}
             width={600}
+            alt='Banner'
             layout='responsive'
           />
         </div>
