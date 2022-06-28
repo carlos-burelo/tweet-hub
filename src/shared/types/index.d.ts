@@ -1,19 +1,19 @@
 // # Tweet interfaces
 
 export interface Tweet {
-  id: string // Tweet ID
-  author: User // User ID
-  authorId: string // User ID
-  createdAt: string // Tweet creation date
-  updatedAt: string // Tweet update date
-  content: Content // Tweet content  
-  reactions: Reactions // Tweet reactions
-  hashtags: string[] // Tweet hashtags
-  mentions: string[] // Tweet mentions
+  id: string
+  author: User
+  authorId: string
+  createdAt: string
+  updatedAt: string
+  content: Content
+  reactions: Reactions
+  hashtags: string[]
+  mentions: string[]
 }
 export interface Content {
-  text: string // Tweet text
-  media: string[] // Tweet media
+  text: string
+  media: string[]
 }
 
 export interface Reactions {
@@ -23,34 +23,34 @@ export interface Reactions {
   retweets: Reaction
 }
 interface Reaction {
-  count: number // Number of likes
-  users: User[] // List of id users who liked the tweet
+  count: number
+  users: User[]
 }
 interface TweetInput extends Omit<Tweet, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> { }
 
 // # User interfaces
 
 export interface User {
-  id: string // User ID
-  avatar: string // User avatar
-  displayName: string // User display name
-  userName: string // User username
-  bio: string // User bio
-  createdAt: string // User creation date
-  website?: string // User website
-  following: User[] // List of users the user is following
-  followers: User[] // List of users who follow the user
+  id: string
+  avatar: string
+  displayName: string
+  userName: string
+  bio: string
+  createdAt: string
+  website?: string
+  following: User[]
+  followers: User[]
 }
 interface UserInput extends Omit<User, 'id' | 'createdAt' | 'following' | 'followers'> { }
 
 // # Comment interfaces
 
 export interface Comment {
-  id: string // Comment ID
-  author: User // Comment author
-  createdAt: string // Comment creation date
-  updatedAt: string // Comment update date
-  content: Content // Comment content
-  reactions: Reactions // Comment reactions
+  id: string
+  author: User
+  createdAt: string
+  updatedAt: string
+  content: Content
+  reactions: Reactions
 }
 interface CommentInput extends Omit<Comment, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> { }

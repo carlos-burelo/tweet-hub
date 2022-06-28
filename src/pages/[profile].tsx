@@ -21,10 +21,9 @@ const Lists: NextPage<Props> = ({}) => {
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { profile } = params as { profile: string }
   const data = await gql<User>(userQuery, { userName: profile })
-  // console.log(data)
   return {
     props: {
-      // user,
+      user: data.user,
     },
   }
 }

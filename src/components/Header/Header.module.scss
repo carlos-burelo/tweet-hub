@@ -12,9 +12,6 @@
 
 .head {
   height: var(--header-height);
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
   @include flex-between;
 }
 
@@ -40,9 +37,6 @@
 .back {
   height: 40px;
   width: 40px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   cursor: pointer;
   @include center;
 }

@@ -1,9 +1,6 @@
 @import 'utils';
 
 .tweetHeader {
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
   @include flex-between;
 }
 
@@ -17,9 +14,6 @@
 }
 
 .more {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   @include center;
   padding: 6px;
   cursor: pointer;

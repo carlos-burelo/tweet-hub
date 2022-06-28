@@ -3,9 +3,6 @@
 .notification {
   width: 100%;
   padding: 15px;
-  // display: flex;
-  // align-items: center;
-  // gap: 15px;
   @include flex;
   cursor: pointer;
   border-top: solid 1px var(--border);
@@ -16,8 +13,5 @@
 }
 
 .message {
-  // display: flex;
-  // align-items: center;
-  // gap: 10px;
   @include flex;
 }

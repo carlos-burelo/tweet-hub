@@ -18,8 +18,6 @@
 .icon {
   border-radius: var(--max-radius);
   padding: 7px;
-  // display: grid;
-  // place-content: center;
   @include center;
   transition: color, background-color var(--t-duration) ease-in-out;
 }

@@ -2,7 +2,6 @@
 
 .trendsCard {
   padding: 15px;
-  // display: flex;
   @include flex;
   cursor: pointer;
 }
@@ -26,7 +25,6 @@
 
 .more {
   height: fit-content;
-  // display: flex;
   @include center;
   padding: 6px;
   cursor: pointer;

@@ -5,9 +5,6 @@
   border-radius: var(--min-radius);
   width: 100%;
   @include flex;
-  // display: flex;
-  // align-items: center;
-  // gap: 10px;
 }
 
 .link:hover {
