@@ -1,4 +1,4 @@
-import { host } from "shared/env"
+import { host } from "#shared/env"
 
 export default async function gql<T = any>(query: string, variables?: any): Promise<{ [k: string]: T }> {
   let userQuery = `
@@ -7,7 +7,10 @@ export default async function gql<T = any>(query: string, variables?: any): Prom
     }
   `
   if (variables) {
-    for (const key in variables) userQuery = userQuery.replaceAll(`$${key}`, `"${variables[key]}"`)
+    for (const key in variables) {
+      const regex = new RegExp(`\\$${key}`, 'g')
+      userQuery = userQuery.replace(regex, `"${variables[key]}"`)
+    }
   }
   const fetcher = async (query: string, variables?: any) => await fetch(`${host}/api/graphql`, {
     method: "POST",

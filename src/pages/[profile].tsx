@@ -9,7 +9,7 @@ interface Props {
   user: User
 }
 
-const Lists: NextPage<Props> = ({ user }) => {
+const Lists: NextPage<Props> = ({}) => {
   return (
     <Layout>
       <ProfileContainer />
@@ -20,10 +20,11 @@ const Lists: NextPage<Props> = ({ user }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { profile } = params as { profile: string }
-  const { user } = await gql<User>(userQuery, { userName: profile })
+  const data = await gql<User>(userQuery, { userName: profile })
+  // console.log(data)
   return {
     props: {
-      user,
+      // user,
     },
   }
 }

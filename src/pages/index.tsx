@@ -1,6 +1,7 @@
 import Feed from '#components/Feed'
 import Layout from '#components/Layout'
 import Sidebar from '#components/Sidebar'
+import TweetBox from '#components/Tweet/TweetBox'
 import TweetCard from '#components/Tweet/TweetCard'
 import query from '#graphql'
 import { Tweet } from '#types'
@@ -13,6 +14,7 @@ const Home: NextPage<Props> = ({ tweets }) => {
   return (
     <Layout>
       <Feed>
+        <TweetBox />
         {tweets.map(tweet => (
           <TweetCard key={tweet.id} {...tweet} />
         ))}
