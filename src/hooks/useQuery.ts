@@ -21,7 +21,6 @@ export default function useQuery(query: string, variables?: any) {
             userQuery = userQuery.replace(regex, `"${variables[key]}"`)
           }
         }
-        console.log(userQuery)
         const response = await fetch('/api/graphql', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
