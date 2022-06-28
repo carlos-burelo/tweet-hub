@@ -1,55 +1,19 @@
 import _ from './TweetActions.module.scss'
-import { ActionIconsMap } from '#shared/icons'
-import { useState } from 'react'
+import { MediaIconsMap } from '#shared/icons'
 
-const colors: any = {
-  blue: '#1d9bf0',
-  'blue-bg': '#1d9bf01a',
-  green: '#00ba7c',
-  'green-bg': '#00ba7c1a',
-  red: '#f91880',
-  'red-bg': '#f918801a',
-}
-interface Props {}
-interface ActionProps extends React.HTMLAttributes<HTMLDivElement> {
-  color: string
-  count: number
-  icons: JSX.Element[]
-}
 export default function TweetActions() {
-  const [Like, LikeActive] = ActionIconsMap.like
-  const [Retweet] = ActionIconsMap.retweet
-  const [Comment] = ActionIconsMap.comment
-  const [Share] = ActionIconsMap.direct
-
   return (
-    <div className={_.tweetActions}>
-      <Action count={1} color='blue' icons={[Comment, Comment]} />
-      <Action count={1} color='green' icons={[Retweet, Retweet]} />
-      <Action count={1} color='red' icons={[Like, LikeActive]} />
-      <Action count={1} color='blue' icons={[Share, Share]} />
-    </div>
+    <section className={_.actions}>
+      <Action name='image' />
+      <Action name='gif' />
+      <Action name='emoji' />
+    </section>
   )
 }
-function Action({ count, icons, color, ...props }: ActionProps) {
-  const [pressed, setPressed] = useState(false)
-  const [Icon, IconActive] = icons
-  const styles = {
-    '--color': colors[color],
-    '--bg-color': colors[`${color}-bg`],
-  }
-  return (
-    <div
-      className={_.action}
-      onMouseDown={() => setPressed(true)}
-      onMouseUp={() => setPressed(false)}
-      onMouseLeave={() => setPressed(false)}
-      onClick={() => setPressed(false)}
-      {...props}
-      style={styles as any}
-    >
-      <div className={_.icon}>{pressed ? IconActive : Icon}</div>
-      <div className={_.text}>{count}</div>
-    </div>
-  )
+interface ActionProps extends React.HTMLAttributes<HTMLDivElement> {
+  name: string
+}
+function Action({ name }: ActionProps) {
+  const [Icon] = MediaIconsMap[name]
+  return <div className={_.action}>{Icon}</div>
 }

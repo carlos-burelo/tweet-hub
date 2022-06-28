@@ -1,6 +1,6 @@
 import Avatar from '#components/Avatar'
 import Markdown from '#components/Markdown'
-import TweetActions from '#components/Tweet/TweetActions'
+import TweetReactions from '#components/Tweet/TweetReactions'
 import TweetHeader from '#components/Tweet/TweetHeader'
 import { Tweet } from '#types'
 import _ from './TweetCard.module.scss'
@@ -19,7 +19,7 @@ export default function TweetCard({ author, content, createdAt }: Tweet) {
           createdAt={createdAt}
         />
         <Markdown raw={content.text} />
-        <TweetActions />
+        <TweetReactions />
       </div>
     </div>
   )

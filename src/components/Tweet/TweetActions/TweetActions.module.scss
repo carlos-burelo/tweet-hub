@@ -1,38 +1,18 @@
 @import 'utils';
 
-.tweetActions {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 10px;
+.actions {
+  @include flex;
+  gap: 5px;
 }
 
 .action {
-  font-size: 14px;
-  color: var(--subtext);
   cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.icon {
+  padding: 8px;
   border-radius: var(--max-radius);
-  padding: 7px;
-  // display: grid;
-  // place-content: center;
+  color: var(--primary);
   @include center;
-  transition: color, background-color var(--t-duration) ease-in-out;
-}
 
-.action:hover .icon {
-  background: var(--bg-color);
-  color: var(--color);
-}
-
-.text {
-  margin-left: 2px;
-}
-
-.action:hover .text {
-  color: var(--color);
+  &:hover {
+    background-color: var(--primary-transluced);
+  }
 }
