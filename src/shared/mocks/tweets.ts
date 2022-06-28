@@ -1,4 +1,4 @@
-import { Tweet } from "#types"
+import { Tweet } from '#types'
 
 export const tweets: Tweet[] = [
   {
@@ -10,28 +10,26 @@ export const tweets: Tweet[] = [
     reactions: {
       like: {
         count: 1,
-        users: []
+        users: [],
       },
       comments: {
         count: 1,
-        users: []
+        users: [],
       },
       shares: {
         count: 1,
-        users: []
+        users: [],
       },
       retweets: {
         count: 1,
-        users: []
-      }
+        users: [],
+      },
     },
     hashtags: ['#hello', '#world'],
-    mentions: [
-      'https://godofredo.ninja/content/images/2020/05/deno-bg.jpg'
-    ],
+    mentions: ['https://godofredo.ninja/content/images/2020/05/deno-bg.jpg'],
     content: {
       media: [],
-      text: 'Hello world! #hello #world\n ![deno](https://godofredo.ninja/content/images/2020/05/deno-bg.jpg)'
+      text: 'Hello world! #hello #world\n ![deno](https://godofredo.ninja/content/images/2020/05/deno-bg.jpg)',
     },
   },
   {
@@ -43,26 +41,26 @@ export const tweets: Tweet[] = [
     reactions: {
       like: {
         count: 1,
-        users: []
+        users: [],
       },
       comments: {
         count: 1,
-        users: []
+        users: [],
       },
       shares: {
         count: 1,
-        users: []
+        users: [],
       },
       retweets: {
         count: 1,
-        users: []
-      }
+        users: [],
+      },
     },
     hashtags: ['#hello', '#world'],
     mentions: [],
     content: {
       media: [],
-      text: 'Hello world! #hello #world @user1'
+      text: 'Hello world! #hello #world @user1',
     },
   },
   {
@@ -74,26 +72,26 @@ export const tweets: Tweet[] = [
     reactions: {
       like: {
         count: 1,
-        users: []
+        users: [],
       },
       comments: {
         count: 1,
-        users: []
+        users: [],
       },
       shares: {
         count: 1,
-        users: []
+        users: [],
       },
       retweets: {
         count: 1,
-        users: []
-      }
+        users: [],
+      },
     },
     hashtags: ['#hello', '#world'],
     mentions: [],
     content: {
       media: [],
-      text: 'Hello world! #hello #world'
+      text: 'Hello world! #hello #world',
     },
   },
   {
@@ -105,26 +103,26 @@ export const tweets: Tweet[] = [
     reactions: {
       like: {
         count: 1,
-        users: []
+        users: [],
       },
       comments: {
         count: 1,
-        users: []
+        users: [],
       },
       shares: {
         count: 1,
-        users: []
+        users: [],
       },
       retweets: {
         count: 1,
-        users: []
-      }
+        users: [],
+      },
     },
     hashtags: ['#hello', '#world'],
     mentions: [],
     content: {
       media: [],
-      text: 'Hello world! #hello #world'
+      text: 'Hello world! #hello #world',
     },
-  }
+  },
 ]

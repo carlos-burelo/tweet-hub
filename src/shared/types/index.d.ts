@@ -26,7 +26,8 @@ interface Reaction {
   count: number
   users: User[]
 }
-interface TweetInput extends Omit<Tweet, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> { }
+interface TweetInput
+  extends Omit<Tweet, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> {}
 
 // # User interfaces
 
@@ -41,7 +42,8 @@ export interface User {
   following: User[]
   followers: User[]
 }
-interface UserInput extends Omit<User, 'id' | 'createdAt' | 'following' | 'followers'> { }
+interface UserInput
+  extends Omit<User, 'id' | 'createdAt' | 'following' | 'followers'> {}
 
 // # Comment interfaces
 
@@ -53,4 +55,5 @@ export interface Comment {
   content: Content
   reactions: Reactions
 }
-interface CommentInput extends Omit<Comment, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> { }
+interface CommentInput
+  extends Omit<Comment, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> {}

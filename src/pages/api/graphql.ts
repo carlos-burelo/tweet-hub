@@ -5,14 +5,17 @@ import { NextApiRequest, NextApiResponse } from 'next'
 const server = createServer({
   schema: {
     typeDefs,
-    resolvers
+    resolvers,
   },
 
   graphiql: {
     endpoint: '/api/graphql',
-    title: 'Tweet Hub - API'
-  }
+    title: 'Tweet Hub - API',
+  },
 })
-export default async function apiHandler(req: NextApiRequest, res: NextApiResponse) {
+export default async function apiHandler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   return server.requestListener(req, res)
 }

@@ -1,4 +1,4 @@
-import { User } from "#types"
+import { User } from '#types'
 
 export const users: User[] = [
   {
@@ -33,11 +33,8 @@ export const users: User[] = [
     website: 'https://user1.com',
     followers: [],
     following: [],
-  }
+  },
 ]
-
-
-
 
 export const userMock: User = {
   avatar: '/profile.png',
@@ -58,5 +55,6 @@ export const tweetMock = {
 }
 export const listMock = {
   id: '1',
-  image: 'https://www.geekmi.news/__export/1636751568813/sites/debate/img/2021/11/12/nobara_jujutsu_kaisen_figura.jpg_976912859.jpg'
+  image:
+    'https://www.geekmi.news/__export/1636751568813/sites/debate/img/2021/11/12/nobara_jujutsu_kaisen_figura.jpg_976912859.jpg',
 }
