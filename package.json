@@ -2,6 +2,11 @@
   "name": "tweet-hub",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Carlos Burelo",
+    "email": "carlosfernandoburelo@gmail.com"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
