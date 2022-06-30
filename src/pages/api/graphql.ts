@@ -1,6 +1,7 @@
 import { resolvers, typeDefs } from '#server/graphql'
 import { createServer } from '@graphql-yoga/node'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { connect } from '#database/connection'
 
 const server = createServer({
   schema: {
@@ -17,5 +18,6 @@ export default async function apiHandler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await connect()
   return server.requestListener(req, res)
 }
