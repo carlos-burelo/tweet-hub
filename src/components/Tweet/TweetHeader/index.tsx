@@ -1,11 +1,10 @@
 import UserName from '#components/UserName'
 import { MoreIcon } from '#shared/icons'
 import _ from './TweetHeader.module.scss'
+import { User } from '#types'
 
-interface Props {
-  userName: string
-  displayName: string
-  createdAt: string
+interface Props extends Pick<User, 'displayName' | 'userName'> {
+  createdAt: string // tweet createdAt
 }
 
 export default function TweetHeader({
