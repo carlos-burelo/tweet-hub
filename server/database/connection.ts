@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose, { ConnectOptions } from "mongoose"
 
 const MONGODB_URI = process.env.MONGODB_URI
 
@@ -16,7 +16,7 @@ if (!connection) connection = global.mongoose = { conn: null, promise: null }
 export async function connect() {
   if (connection.conn) return connection.conn
   if (!connection.promise) {
-    const options = { bufferCommands: false }
+    const options: ConnectOptions = { bufferCommands: false }
     connection.promise = mongoose.connect(MONGODB_URI, options).then(mongoose => mongoose)
   }
   connection.conn = await connection.promise
