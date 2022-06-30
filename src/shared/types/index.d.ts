@@ -1,11 +1,13 @@
 // # Tweet interfaces
+export interface MongoTimestamps {
+  createdAt: string
+  updatedAt: string
+}
 
-export interface Tweet {
+export interface Tweet extends MongoTimestamps {
   id: string
   author: User
   authorId: string
-  createdAt: string
-  updatedAt: string
   content: Content
   reactions: Reactions
   hashtags: string[]
@@ -27,33 +29,30 @@ interface Reaction {
   users: User[]
 }
 interface TweetInput
-  extends Omit<Tweet, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> {}
+  extends Omit<Tweet, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> { }
 
 // # User interfaces
 
-export interface User {
+export interface User extends MongoTimestamps {
   id: string
   avatar: string
   displayName: string
   userName: string
   bio: string
-  createdAt: string
   website?: string
   following: User[]
   followers: User[]
 }
 interface UserInput
-  extends Omit<User, 'id' | 'createdAt' | 'following' | 'followers'> {}
+  extends Omit<User, 'id' | 'createdAt' | 'following' | 'followers'> { }
 
 // # Comment interfaces
 
-export interface Comment {
+export interface Comment extends MongoTimestamps {
   id: string
   author: User
-  createdAt: string
-  updatedAt: string
   content: Content
   reactions: Reactions
 }
 interface CommentInput
-  extends Omit<Comment, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> {}
+  extends Omit<Comment, 'id' | 'createdAt' | 'updatedAt' | 'reactions'> { }
