@@ -26,7 +26,7 @@ export const tweets: Tweet[] = [
       },
     },
     hashtags: ['#hello', '#world'],
-    mentions: ['https://godofredo.ninja/content/images/2020/05/deno-bg.jpg'],
+    mentions: [''],
     content: {
       media: [],
       text: 'Hello world! #hello #world\n ![deno](https://godofredo.ninja/content/images/2020/05/deno-bg.jpg)',

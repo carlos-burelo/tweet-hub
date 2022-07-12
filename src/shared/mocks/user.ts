@@ -54,11 +54,10 @@ export const userMock: User = {
 
 export const tweetMock = {
   id: '1',
-  image: 'https://pbs.twimg.com/media/FV34hOzXgAEekTg?format=jpg&name=small',
+  image: '/deno.jpg',
   raw: `Hello, world!\n![image](https://pbs.twimg.com/media/FV34hOzXgAEekTg?format=jpg&name=small)`,
 }
 export const listMock = {
   id: '1',
-  image:
-    'https://www.geekmi.news/__export/1636751568813/sites/debate/img/2021/11/12/nobara_jujutsu_kaisen_figura.jpg_976912859.jpg',
+  image: '/deno.jpg',
 }
