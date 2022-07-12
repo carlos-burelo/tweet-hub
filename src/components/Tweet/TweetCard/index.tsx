@@ -5,7 +5,7 @@ import TweetHeader from '#components/Tweet/TweetHeader'
 import { Tweet } from '#types'
 import _ from './TweetCard.module.scss'
 
-export default function TweetCard({ author, content, createdAt }: Tweet) {
+export default function TweetCard({ author, content, createdAt, id }: Tweet) {
   const { userName, displayName } = author
   return (
     <div className={_.tweetCard}>
@@ -17,6 +17,7 @@ export default function TweetCard({ author, content, createdAt }: Tweet) {
           userName={userName}
           displayName={displayName}
           createdAt={createdAt}
+          id={id}
         />
         <Markdown raw={content.text} />
         <TweetReactions />

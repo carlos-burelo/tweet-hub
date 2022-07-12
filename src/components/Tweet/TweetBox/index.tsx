@@ -1,11 +1,20 @@
 import Avatar from '#components/Avatar'
 import Button from '#components/Button'
-import TextInput from '#components/Input/TextInput'
+import ContentInput from '#components/Input/ContentInput'
 import { userMock } from '#mocks/user'
 import TweetActions from '../TweetActions'
 import _ from './TweetBox.module.scss'
+import { MouseEvent } from 'react'
 
-export default function TweetBox() {
+interface TweetBoxProps {
+  handleSubmit?: (e: MouseEvent<HTMLButtonElement>) => void
+}
+
+export default function TweetBox({ handleSubmit }: TweetBoxProps) {
+  const handleSubmitTweet = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    handleSubmit && handleSubmit(e)
+  }
   return (
     <div className={_.tweetBox}>
       <div className={_.user}>
@@ -13,11 +22,11 @@ export default function TweetBox() {
       </div>
       <div className={_.tweetArea}>
         <div className={_.input}>
-          <TextInput placeholder='Que estas pensando?' />
+          <ContentInput placeholder='Que estas pensando?' />
         </div>
         <div className={_.actions}>
           <TweetActions />
-          <Button text='Twittear' primary />
+          <Button text='Twittear' onClick={handleSubmitTweet} primary />
         </div>
       </div>
     </div>

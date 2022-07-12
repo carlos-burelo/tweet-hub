@@ -1,0 +1,35 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.836);
+  z-index: var(--z-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  max-width: 500px;
+  width: 100%;
+  background: var(--background);
+  border-radius: var(--mid-radius);
+  padding: 15px;
+  border: 1px solid var(--border);
+}
+
+.modalClose {
+  border: none;
+  cursor: pointer;
+  background: var(--background-card);
+  color: var(--titles);
+  padding: 8px;
+  display: grid;
+  place-content: center;
+  line-height: 1em;
+  border-radius: var(--max-radius);
+}
