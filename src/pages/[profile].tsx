@@ -1,7 +1,7 @@
 import Layout from '#components/Layout'
 import ProfileContainer from '#components/Profile/ProfileContainer'
 import Sidebar from '#components/Sidebar'
-import gql, { userQuery } from '#graphql'
+import gql, { userQuery } from '#graphql/client'
 import { User } from '#shared/types'
 import type { GetServerSideProps, NextPage } from 'next'
 
