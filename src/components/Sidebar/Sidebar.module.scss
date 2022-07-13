@@ -30,6 +30,7 @@
   border-radius: 0 0 var(--mid-radius) var(--mid-radius);
   cursor: pointer;
   color: var(--primary);
+  filter: brightness(1.2);
 }
 
 .viewMore:hover {

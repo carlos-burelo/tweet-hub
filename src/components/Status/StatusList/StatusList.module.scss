@@ -1,0 +1,25 @@
+@import 'utils';
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  border-top: solid 1px var(--border);
+  gap: 20px;
+  padding: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: 190px;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mobile {
+    // min-height: 300px;
+    width: 100vw;
+  }
+}

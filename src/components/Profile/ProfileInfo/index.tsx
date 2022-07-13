@@ -1,6 +1,6 @@
 import Avatar from '#components/Avatar'
 import TweetCard from '#components/Tweet/TweetCard'
-import { userFeedQuery } from '#graphql'
+import { userFeedQuery } from '#graphql/client'
 import useQuery from '#hooks/useQuery'
 import { userMock } from '#mocks/user'
 import { CalendarIcon, WebsiteIcon } from '#shared/icons'
@@ -16,11 +16,12 @@ export default function ProfileInfo() {
         <div className={_.bannerContainer}>
           <Image
             className={_.banner}
-            src='https://pbs.twimg.com/profile_banners/1087496012573208576/1650382139/1500x500'
+            src='/deno.jpg'
             height={200}
             width={600}
             alt='Banner'
             layout='responsive'
+            objectFit='cover'
           />
         </div>
         <div className={_.avatarContainer}>

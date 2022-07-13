@@ -1,0 +1,48 @@
+@import 'utils';
+
+.container {
+  padding: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--background-card);
+  }
+}
+
+.bannerImg {
+  border-radius: var(--min-radius);
+}
+
+.data {
+  position: relative;
+  padding-top: 30px;
+  background-color: var(--background-card);
+  padding-inline: 10px;
+  padding-bottom: 10px;
+  border-radius: 0 0 var(--min-radius) var(--min-radius);
+}
+
+.info {
+  @include flex-between;
+}
+
+.meta {
+  @include flex;
+  gap: 5px;
+  font-size: 14px;
+  color: var(--subtext);
+}
+
+.avatar {
+  position: absolute;
+  top: -25px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--max-radius);
+  outline: solid 3px var(--primary);
+}
+
+.title {
+  font-size: 22px;
+}

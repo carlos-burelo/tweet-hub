@@ -1,5 +1,6 @@
 import Navbar from '#components/Navbar'
 import _ from './Layout.module.scss'
+import Head from 'next/head'
 
 interface Props {
   children: React.ReactNode
@@ -7,11 +8,16 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className={_.layout}>
-      <Navbar />
-      <section className={_.container}>
-        <div className={_.content}>{children}</div>
-      </section>
-    </div>
+    <>
+      <Head>
+        <title>Tweet Hub</title>
+      </Head>
+      <div className={_.layout}>
+        <Navbar />
+        <section className={_.container}>
+          <div className={_.content}>{children}</div>
+        </section>
+      </div>
+    </>
   )
 }

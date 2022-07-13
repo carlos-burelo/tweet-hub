@@ -1,8 +1,10 @@
-import { followUsersQuery } from '#graphql'
+import { followUsersQuery } from '#graphql/client'
 import useQuery from '#hooks/useQuery'
 import FollowChip from '#components/Follow/FollowChip'
 import Search from '#components/Search'
 import _ from './Sidebar.module.scss'
+import groups from '#mocks/groups'
+import GroupCard from '#components/Groups/GroupCard'
 
 interface SidebarProps {
   showFollow?: boolean
@@ -25,8 +27,10 @@ export default function Sidebar({
       )}
       <aside className={_.sidebar}>
         {showTrends && (
-          <AsideCard title='Que esta pasando?'>
-            <h2>hello</h2>
+          <AsideCard title='Unete a una comunidad'>
+            {groups.map(group => (
+              <GroupCard key={group.id} {...group} />
+            ))}
           </AsideCard>
         )}
 
@@ -55,7 +59,7 @@ function AsideCard({ title, children }: SideCardProps) {
     <section className={_.asideCard}>
       <h3 className={_.title}>{title}</h3>
       <div className={_.content}>{children}</div>
-      <div className={_.viewMore}>View More</div>
+      <div className={_.viewMore}>Ver mas</div>
     </section>
   )
 }

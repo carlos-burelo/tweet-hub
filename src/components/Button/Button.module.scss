@@ -1,3 +1,5 @@
+@import 'utils';
+
 .button {
   border: none;
   outline: none;
@@ -7,6 +9,9 @@
   padding: 6px 15px;
   border-radius: var(--max-radius);
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 
   &:disabled {
     opacity: 0.5;
@@ -20,4 +25,26 @@
 
 .primary:hover {
   background: var(--primary-hvr);
+}
+
+.large {
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 17px;
+
+  @include tablet {
+    padding: 10px;
+
+    span {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    padding: 15px;
+    position: fixed;
+    bottom: calc(var(--header-height) + 20px);
+    right: 20px;
+    z-index: var(--z-fab);
+  }
 }

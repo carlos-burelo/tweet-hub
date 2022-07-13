@@ -1,4 +1,6 @@
+import Button from '#components/Button'
 import NavLink from '#components/NavLink'
+import TweetModal from '#components/Tweet/TwetModal'
 import { userMock } from '#mocks/user'
 import _ from './Navbar.module.scss'
 
@@ -10,6 +12,7 @@ export default function Navbar() {
       <NavLink to='/notifications?show=all' text='Notificaciones' />
       <NavLink to='/lists' text='Listas' />
       <NavLink to={`/${userMock.userName}`} text='Perfil' />
+      <TweetModal />
     </nav>
   )
 }

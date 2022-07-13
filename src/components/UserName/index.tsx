@@ -1,4 +1,4 @@
-import query, { userQuery } from '#graphql'
+import query, { userQuery } from '#graphql/client'
 import useWindowSize from '#hooks/useWindowSize'
 import { User } from '#types'
 import Link from 'next/link'
