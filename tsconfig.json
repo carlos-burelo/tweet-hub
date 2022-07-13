@@ -1,19 +1,41 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "#mocks/*": ["./shared/mocks/*"],
-      "#shared/*": ["./shared/*"],
-      "#server/*": ["../server/*"],
-      "#database/*": ["../server/database/*"],
-      "#libs/*": ["./shared/libs/*"],
-      "#components/*": ["./components/*"],
-      "#graphql": ["./graphql/index"],
-      "#hooks/*": ["./hooks/*"],
-      "#types": ["./shared/types/index"]
+      // CLIENT
+      "#components/*": [
+        "./src/components/*"
+      ],
+      "#graphql/client": [
+        "./src/graphql/index"
+      ],
+      "#hooks/*": [
+        "./src/hooks/*"
+      ],
+      // SHARED
+      "#mocks/*": [
+        "./src/shared/mocks/*"
+      ],
+      "#shared/*": [
+        "./src/shared/*"
+      ],
+      "#libs/*": [
+        "./src/shared/libs/*"
+      ],
+      "#types": [
+        "./src/shared/types/index"
+      ],
+      // SERVER
+      "#api/*": [
+        "src/pages/api/*"
+      ]
     },
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -27,6 +49,12 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
