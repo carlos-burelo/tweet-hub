@@ -39,3 +39,17 @@ export const userQuery = `user(userName: $userName) {
   bio
   website
 }`
+
+export const tweetQuery = `tweet(id: $id) {
+  id
+  author {
+    displayName
+    avatar
+    userName
+  }
+  content {
+    text
+    media
+  }
+  createdAt
+}`

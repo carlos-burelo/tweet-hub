@@ -1,6 +1,7 @@
 import { host } from '#shared/env'
 
-export default async function gql<T = any>(
+export * from './querys'
+export default async function query<T = any>(
   query: string,
   variables?: any
 ): Promise<{ [k: string]: T }> {
@@ -24,4 +25,3 @@ export default async function gql<T = any>(
   const response = await fetcher(userQuery, variables)
   return response.data || null
 }
-export * from './queys'
