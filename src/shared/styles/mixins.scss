@@ -1,0 +1,115 @@
+// media query using method: max-width and desktop first
+$desktop: 1200px;
+$tablet: 1030px;
+$mobile: 820px;
+// NOTE: cambiar breackpoints por lg = 1200px, md = 800px y sm = 768px
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin lg {
+	@media (max-width: $desktop) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (max-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (max-width: $mobile) {
+		@content;
+	}
+}
+
+@mixin middle {
+	display: flex;
+	align-items: center;
+}
+
+@mixin center {
+	display: grid;
+	place-content: center;
+}
+
+@mixin space-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@mixin full-content {
+	width: 100%;
+	height: 100%;
+}
+
+@mixin column-grid($cols: 2, $gap: 15px) {
+	display: grid;
+	align-items: center;
+	gap: $gap;
+	grid-template-columns: repeat($cols, 1fr);
+}
+
+@mixin separe($gap: 10px) {
+	display: flex;
+	gap: $gap;
+}
+
+@mixin absolute-position {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@mixin header-styles {
+	background-color: var(--background-translucent);
+	backdrop-filter: blur(12px);
+}
+
+@mixin custom-scrollbar {
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+		// padding: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--background-card-hvr);
+		border-radius: var(--mid-radius);
+	}
+}
+
+@mixin text-wrap($clamp: 2) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $clamp;
+	-webkit-box-orient: vertical;
+}
+
+@mixin spread {
+	display: flex;
+	scroll-padding: 0 36px;
+	overflow-x: auto;
+	-ms-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+	overflow-y: hidden;
+	flex-wrap: nowrap;
+	flex-shrink: 1;
+	flex-grow: 1;
+	flex-direction: row;
+	padding-block: 5px;
+	gap: 10px;
+}

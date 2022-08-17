@@ -5,7 +5,7 @@
 	let grid = { rows: 1, cols: 1 }
 	let limitUp = length > 4 ? 4 : length
 	if (length == 1) (gridArea = `"img0"`), (grid = { rows: 1, cols: 1 })
-	if (media.length == 2) (gridArea = `"img0 img1"`), (grid = { rows: 1, cols: 2 })
+	if (length == 2) (gridArea = `"img0 img1"`), (grid = { rows: 1, cols: 2 })
 	if (length == 3) (gridArea = `"img0 img2" "img1 img2"`), (grid = { rows: 2, cols: 2 })
 	if (length >= 4) (gridArea = `"img0 img1" "img2 img3"`), (grid = { rows: 2, cols: 2 })
 	let styles = `
@@ -49,11 +49,13 @@
 	}
 	.content-area {
 		display: grid;
-		gap: 10px;
+		gap: 5px;
 	}
 	img {
 		height: 100%;
 		object-fit: cover;
 		position: relative;
+		min-height: 150px;
+		border-radius: 5px;
 	}
 </style>

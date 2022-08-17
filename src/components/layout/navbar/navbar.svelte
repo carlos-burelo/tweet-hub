@@ -1,7 +1,7 @@
 <script>
-	import NavLink from './nav-link.svelte'
-	import BrandLogo from '../../global/brand-logo.svelte'
-	import Account from './account.svelte'
+	import NavLink from './NavLink.svelte'
+	import BrandLogo from '../../global/Logo.svelte'
+	import Account from './Account.svelte'
 </script>
 
 <nav>
@@ -13,7 +13,6 @@
 		<NavLink to="/trends" title="Tendiencias" />
 		<NavLink to="/notifications" title="Notificaciones" />
 		<NavLink to="/lists" title="Listas" />
-		<NavLink to="/inbox" title="Mensajes" />
 		<NavLink to="/groups" title="Grupos" />
 	</ul>
 	<Account />

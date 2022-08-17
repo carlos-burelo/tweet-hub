@@ -1,5 +1,5 @@
-import adapter from '@sveltejs/adapter-auto';
-import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-auto'
+import preprocess from 'svelte-preprocess'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -7,14 +7,14 @@ const config = {
 	// for more information about preprocessors
 	preprocess: preprocess({
 		scss: {
-			includePaths: ['./src/styles'],
-			prependData: `@import "mixins.scss";`,
-		},
-  }),
+			includePaths: ['./src/shared/styles'],
+			prependData: `@use "mixins.scss" as *;`
+		}
+	}),
 
 	kit: {
 		adapter: adapter()
 	}
-};
+}
 
-export default config;
+export default config

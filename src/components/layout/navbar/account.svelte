@@ -1,15 +1,18 @@
 <script>
-	import Avatar from '#components/global/avatar.svelte'
-	import Icon from '#components/utils/icon.svelte'
-	import { user } from '#data/mocks/users'
+	import Avatar from '#/global/Avatar.svelte'
+	import Icon from '#/utils/Icon.svelte'
+	import { auth } from '#api/firebase'
+	import { user } from '#mocks/users'
+	import { authStore } from '#stores/authStore'
+	// console.log($authStore)
 </script>
 
 <div class="account">
 	<div class="user">
-		<Avatar size={35} />
+		<Avatar src={user.avatar} size={35} />
 		<div class="data">
 			<strong class="name">{user.name}</strong>
-			<p class="username">{user.userName}</p>
+			<p class="username">@{user.handle}</p>
 		</div>
 	</div>
 	<div class="more">
@@ -42,7 +45,12 @@
 	.username {
 		line-height: 1em;
 		color: var(--text);
-		font-size: 14px;
+		// font-size: 14px;
+	}
+	.name,
+	.username {
+		@include text-wrap(1);
+		max-width: 90%;
 	}
 	.more {
 		display: flex;

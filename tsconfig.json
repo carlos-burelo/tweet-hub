@@ -2,17 +2,14 @@
 	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
 		"paths": {
-			"#components/*": [
+			"#/*": [
 				"src/components/*"
 			],
 			"#utils/*": [
-				"src/utils/*"
+				"src/shared/utils/*"
 			],
-			"#shared/*": [
-				"src/shared/*"
-			],
-			"#hooks/*": [
-				"src/hooks/*"
+			"#api/*": [
+				"src/shared/api/*"
 			],
 			"#stores/*": [
 				"src/contexts/*"
@@ -21,19 +18,23 @@
 				"src/shared/data/*"
 			],
 			"#mocks/*": [
-				"src/shared/data/mocks/*"
+				"src/shared/mocks/*"
 			],
 			"#types": [
-				"src/shared/types/index"
+				"src/shared/typings.d.ts"
 			],
 		},
 		"allowJs": true,
 		"checkJs": true,
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
+		"forceConsistentCasingInFileNames": false,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
-	}
+		"strict": true,
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx"
+	],
 }

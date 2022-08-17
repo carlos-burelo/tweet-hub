@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Icon from '#components/utils/icon.svelte'
+	import Icon from '#/utils/Icon.svelte'
+	export let placeholder = 'Buscar en tweetHub'
 </script>
 
 <div class="box">
-	<input type="search" placeholder="Buscar en tweetHub" />
+	<input type="search" {placeholder} />
 	<div class="icon">
 		<Icon id="search" />
 	</div>
@@ -13,6 +14,7 @@
 	.box {
 		position: relative;
 		--height: 34px;
+		border-radius: var(--min-radius);
 	}
 	input {
 		padding-left: calc(var(--height) + 10px);
@@ -24,6 +26,12 @@
 		@include center;
 		height: 100%;
 		width: var(--height);
+		border-radius: var(--min-radius);
 		background-color: var(--background-card);
+		cursor: pointer;
+		transition: 300ms ease-in-out background-color;
+		&:hover {
+			background-color: var(--background-card-hvr);
+		}
 	}
 </style>

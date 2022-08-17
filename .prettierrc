@@ -4,5 +4,8 @@
 	"trailingComma": "none",
 	"printWidth": 100,
 	"semi": false,
-	"jsxSingleQuote": true
+	"jsxSingleQuote": true,
+	"svelteAllowShorthand": true,
+	"svelteIndentScriptAndStyle": true,
+	"arrowParens": "avoid"
 }

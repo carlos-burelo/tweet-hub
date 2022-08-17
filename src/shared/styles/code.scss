@@ -1,0 +1,34 @@
+@mixin code {
+	.ts_quot {
+		color: #98c379;
+	}
+
+	.ts_equal,
+	.ts_methods,
+	.ts_tokens {
+		color: #5daef2;
+	}
+
+	.ts_keywords {
+		color: #c678dd;
+	}
+
+	.ts_booleans,
+	.ts_numbers {
+		color: #d29b62;
+	}
+
+	.ts_imports,
+	.ts_params {
+		color: #e26b73;
+	}
+
+	.ts_equal,
+	.ts_tokens {
+		color: #5daef2;
+	}
+
+	.ts_brakets {
+		color: #abb2c0;
+	}
+}

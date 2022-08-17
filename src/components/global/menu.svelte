@@ -1,16 +1,27 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	export let items: any[] = []
+	import type { MenuLink } from '#types'
+	export let items: MenuLink[] = []
 
 	$: ({
 		url: { pathname, search }
 	} = $page)
 	$: fullUrl = pathname + search
+	export let onChange: (path: string) => void = onClick
+	function onClick(path: string) {
+		console.log(path)
+	}
 </script>
 
 <div class="menu">
-	{#each items as { name, to }}
-		<a href={to} class:active={to === fullUrl || to === pathname}>{name}</a>
+	{#each items as { name, to, defaultPath }}
+		<a
+			on:click={() => onChange(name)}
+			href={to}
+			class:active={to === fullUrl || defaultPath === fullUrl || to === pathname}
+		>
+			{name}
+		</a>
 	{/each}
 </div>
 

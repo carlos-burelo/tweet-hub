@@ -1,0 +1,202 @@
+@use 'mixins.scss' as *;
+
+:root {
+	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.7em;
+	font-weight: 400;
+	color-scheme: dark;
+
+	--primary-color: #0070f3;
+	--primary-trasnlucent: #076dcc33;
+
+	--background: #020407;
+	--background-translucent: #020407fa;
+	--background-card: #ffffff07;
+	--background-card-hvr: #ffffff10;
+
+	--foreground: #f5f5f5;
+	--text: #71757a;
+
+	--border-color: #ffffff11;
+	--border-card: #ffffff07;
+
+	--foreground-blue: #0070f3;
+	--foreground-green: #00ba7c;
+	--foreground-rose: #f91880;
+
+	--background-blue: #0070f31a;
+	--background-green: #00ba7c1a;
+	--background-rose: #f918801a;
+
+	--grid-cols: 620px 1fr;
+
+	--nav-width: 240px;
+	--nav-height: 100vh;
+	--header-height: 50px;
+	--content-padding: 0;
+	--layout-padding: 80px;
+
+	@include lg {
+		--nav-width: 60px;
+		--layout-padding: 20px;
+	}
+
+	@include md {
+		--grid-cols: 700px;
+		--layout-padding: 10px;
+	}
+
+	@include sm {
+		--nav-width: 100%;
+		--layout-padding: 0px;
+		--nav-height: 60px;
+		--content-padding: 0 10px var(--nav-height) 10px;
+		--grid-cols: 100%;
+	}
+
+	--transition: all 100ms ease-in-out;
+
+	--min-radius: 8px;
+	--mid-radius: 12px;
+	--max-radius: 16px;
+	--round: 1000px;
+	--z-tooltip: 10;
+	--z-float: 20;
+	// --z-modal: 30;
+	--z-dialog: 40;
+	--z-navigation: 50;
+	--z-modal: 60;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+*::selection {
+	background: var(--primary-color);
+	color: var(--background);
+}
+
+body {
+	background-color: var(--background);
+	@include custom-scrollbar;
+}
+
+li {
+	list-style: none;
+}
+
+div {
+	border: none;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	font-weight: 500;
+	transition: var(--transition);
+}
+
+button {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 8px 14px;
+	justify-content: center;
+	font-weight: 600;
+	transition: var(--transition);
+	background-color: var(--background-card);
+	border-radius: var(--min-radius);
+
+	&[disabled] {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	&:hover {
+		background-color: var(--background-card-hvr);
+	}
+}
+
+h1,
+h2,
+h3,
+a {
+	color: var(--foreground);
+}
+
+p {
+	color: var(--text);
+}
+
+svg {
+	fill: currentColor, var(--foreground);
+	width: 1.25em;
+	height: 1.25em;
+}
+
+textarea,
+input {
+	resize: none;
+	border: none;
+	outline: none;
+	background-color: var(--background-card);
+	border-radius: var(--min-radius);
+	padding: 0.5em;
+	color: var(--text);
+	font-size: 1em;
+	font-weight: 400;
+	width: 100%;
+	height: 100%;
+}
+
+mark {
+	background-color: transparent;
+	color: var(--primary-color);
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+	border-radius: var(--mid-radius);
+	z-index: 1;
+}
+
+i {
+	font-style: normal;
+	font-family: monospace;
+	font-weight: bold;
+}
+
+div[contenteditable] {
+	min-height: 120px;
+	background-color: var(--background-card);
+	border-radius: var(--min-radius);
+	padding: 0.5em;
+	color: var(--foreground);
+	font-size: 1em;
+	font-weight: 400;
+	width: 100%;
+	height: 100%;
+	font-size: 17px;
+
+	mark {
+		font-weight: 500;
+	}
+
+	&[placeholder]:empty::before {
+		content: attr(placeholder);
+		color: var(--foreground);
+	}
+
+	&[placeholder]:empty:focus::before {
+		content: '';
+	}
+}

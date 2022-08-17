@@ -12,15 +12,15 @@
 </script>
 
 <script lang="ts">
-	import BrandLogo from '#components/global/brand-logo.svelte'
-	import Wrapper from '#components/layout/wrapper.svelte'
+	import BrandLogo from '#/global/Logo.svelte'
+	import Layout from '#/layout/Layout.svelte'
 </script>
 
 <svelte:head>
 	<title>Page not found</title>
 </svelte:head>
 
-<Wrapper title="Pagina no encontrada">
+<Layout title="Pagina no encontrada">
 	<div class="container">
 		<div class="logo">
 			<BrandLogo />
@@ -31,7 +31,7 @@
 			<p>The page you are looking for does not exist.</p>
 		</div>
 	</div>
-</Wrapper>
+</Layout>
 
 <style>
 	.container {

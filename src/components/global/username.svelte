@@ -1,13 +1,14 @@
 <script lang="ts">
-	export let username: string = 'unknown'
+	export let handle = 'unknown'
 </script>
 
-<span>@{username}</span>
+<a href={handle} class="link">@{handle}</a>
 
-<style>
-	span {
+<style lang="scss">
+	.link {
 		line-height: 1;
-		font-size: 14px;
+		font-size: 1em;
+		cursor: pointer;
 		color: var(--text);
 	}
 </style>

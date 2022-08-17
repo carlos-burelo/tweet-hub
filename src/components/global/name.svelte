@@ -1,10 +1,8 @@
 <script lang="ts">
-	export let name: string = '@username'
+	export let name = '@username'
 </script>
 
-<h3>
-	{name}
-</h3>
+<h3>{name}</h3>
 
 <style>
 	h3 {

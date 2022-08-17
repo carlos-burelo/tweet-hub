@@ -1,8 +1,9 @@
 <script lang="ts">
-	import Icon from '#components/utils/icon.svelte'
-	import Search from '#components/global/search.svelte'
-	export let title: string = 'Inicio'
-	export let backButton: boolean = false
+	import Icon from '#/utils/Icon.svelte'
+	import Search from '#/global/Search.svelte'
+	
+	export let title = 'Inicio'
+	export let backButton = false
 </script>
 
 <header class="container">
@@ -17,9 +18,9 @@
 				{title}
 			</span>
 		</div>
-		<button class="action">
+		<!-- <button class="action">
 			<Icon id="config" />
-		</button>
+		</button> -->
 	</div>
 	<div class="search">
 		<Search />
@@ -73,19 +74,20 @@
 		margin-right: 15px;
 		padding: 6px;
 		background-color: transparent;
+		@include center;
 		&:hover {
 			background-color: var(--background-card);
 		}
 	}
-	.action {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-		font-size: 20px;
-		background-color: transparent;
-		width: calc(var(--header-height) - 15px);
-		height: calc(var(--header-height) - 15px);
-	}
+	// .action {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	justify-content: center;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	font-size: 20px;
+	// 	background-color: transparent;
+	// 	width: calc(var(--header-height) - 15px);
+	// 	height: calc(var(--header-height) - 15px);
+	// }
 </style>

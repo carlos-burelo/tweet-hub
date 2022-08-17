@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { icons, type IconSet } from '#shared/data/icons'
+	import { icons, type IconSet } from '#data/icons'
 	export let id: IconSet = 'logo'
 	const Icon = icons[id as 'logo']
 </script>
